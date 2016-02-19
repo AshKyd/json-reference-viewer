@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JSON Ref Viewer</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.blue-light_blue.min.css" />
+
+    <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
+    <script defer src="lib/json-ref-lite.min.js"></script>
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row" style="padding-left:20px;">
+          <span class="mdl-layout-title">JSON Reference Viewer</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-action="beautify" style="color:white;">Beautify</button>
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-action="resolve" style="color:white;">Resolve Refs</button>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <div id="editor" style="width:100%;position:absolute;display:inline-block;top:0px;left:0;right:0;bottom:0;font-size:1em;"></div>
+          <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

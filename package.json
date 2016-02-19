@@ -1,0 +1,19 @@
+{
+  "name": "json-reference-viewer",
+  "version": "1.0.0",
+  "description": "Little web app to resolve JSON references",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AshKyd/json-reference-viewer.git"
+  },
+  "author": "Ash Kyd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AshKyd/json-reference-viewer/issues"
+  },
+  "homepage": "https://github.com/AshKyd/json-reference-viewer#readme"
+}
