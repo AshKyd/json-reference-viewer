@@ -6,10 +6,11 @@ var editor = ace.edit("editor");
  */
 function circularSafeStringify(n){function i(n,i,u,l){return JSON.stringify(n,r(i,l),u)}function r(n,i){var r=[],u=[];return null==i&&(i=function(n,i){return r[0]===i?"[Circular ~]":"[Circular ~."+u.slice(0,r.indexOf(i)).join(".")+"]"}),function(l,t){if(r.length>0){var e=r.indexOf(this);~e?r.splice(e+1):r.push(this),~e?u.splice(e,1/0,l):u.push(l),~r.indexOf(t)&&(t=i.call(this,l,t))}else r.push(t);return null==n?t:n.call(this,l,t)}}return i(n,null,4)}
 
-
 editor.setTheme("ace/theme/chrome");
 editor.getSession().setMode("ace/mode/json");
-editor.renderer.setScrollMargin(10, 0, 0, 0);
+
+// Possible Ace race condition sometimes leaves the editor broken.
+setTimeout( () => editor.resize(), 50);
 
 var snackbarContainer = document.querySelector('#snackbar');
 
